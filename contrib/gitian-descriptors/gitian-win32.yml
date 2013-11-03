@@ -36,7 +36,8 @@ script: |
     i586-mingw32msvc-ranlib ../../stage/lib/libboost_${lib}-mt-s.a
   done
   cd ../..
-  mv include/boost ../CGB-Win/src
+  cp include/boost ../CGB-Win/src
+  mv include/boost .
   cd ..
   #
   unzip cryptogenicbullion-deps-0.0.1.zip
