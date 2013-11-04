@@ -12,7 +12,7 @@
 #include <string>
 #include <vector>
 
-#include <db_cxx.h>
+#include <build_unix/db_cxx.h>
 
 
 class CAddress;
