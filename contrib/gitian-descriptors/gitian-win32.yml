@@ -31,16 +31,23 @@ script: |
   mkdir -p stage/lib
   unzip ../boost-win32-1.50.0-gitian.zip
   cd bin/$GBUILD_BITS
+  #
+  touch place1.txt
+  readlink -f place1.txt
   for lib in *; do
     i586-mingw32msvc-ar rc ../../stage/lib/libboost_${lib}-mt-s.a $lib/*.o
     i586-mingw32msvc-ranlib ../../stage/lib/libboost_${lib}-mt-s.a
   done
+  echo AFTER DONE
   cd ../..
+  touch place2.txt
+  readlink -f place2.txt
   #cp include/boost ../CGB-Win/src
   mv include/boost .
   cd ..
   #
   unzip cryptogenicbullion-deps-0.0.1.zip
+  echo AFTER CRYPTO UNZIP
   #
   find -type f | xargs touch --date="$REFERENCE_DATETIME"
   #
