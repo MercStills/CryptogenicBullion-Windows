@@ -23,11 +23,12 @@ script: |
   touch START_DIR.TXT
   mkdir $HOME/qt
   touch $HOME/HOME_DIR.txt
-  touch ../../../THREE_DOWN.txt
-  touch ../../TWO_DOWN.txt
   touch ../ONE_DOWN.txt
+  touch ../ONE_DOWN.mdd
+  readlink -f ../ONE_DOWN.txt
 
   cd $HOME/qt
+  readlink -f ../build/qt-win32-4.7.4-gitian.zip
   unzip ../build/qt-win32-4.7.4-gitian.zip
   cd $HOME/build/
   export PATH=$PATH:$HOME/qt/bin/
