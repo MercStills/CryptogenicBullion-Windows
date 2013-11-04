@@ -6,13 +6,14 @@
 #define BITCOIN_DB_H
 
 #include "main.h"
+#include "db_cxx.h"
 
 #include <map>
 #include <string>
 #include <vector>
 
-#include <db_cxx.h>
-#include "db_cxx.h"
+//#include <db_cxx.h>
+
 
 class CAddress;
 class CAddrMan;
