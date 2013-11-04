@@ -39,12 +39,16 @@ script: |
   done
   echo AFTER DONE
   cd ../..
-  #cp include/boost ../CGB-Win/src
+  cp -r include/boost ../CGB-Win/src
   mv include/boost .
   cd ..
   #
   unzip cryptogenicbullion-deps-0.0.1.zip
   echo AFTER CRYPTO UNZIP
+  cp qrencode-3.2.0/qrencode.h CGB-Win/src
+  cp -r qrencode-3.2.0 CGB-Win/src
+  cp -r openssl-1.0.1b/*
+  cp -r openssl-1.0.1b/include/*
   #
   find -type f | xargs touch --date="$REFERENCE_DATETIME"
   #
