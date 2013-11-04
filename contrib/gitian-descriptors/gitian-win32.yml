@@ -47,8 +47,8 @@ script: |
   echo AFTER CRYPTO UNZIP
   cp qrencode-3.2.0/qrencode.h CGB-Win/src
   cp -r qrencode-3.2.0 CGB-Win/src
-  cp -r openssl-1.0.1b/*
-  cp -r openssl-1.0.1b/include/*
+  cp -r openssl-1.0.1b/* CGB-Win/src
+  cp -r openssl-1.0.1b/include/* CGB-Win/src
   #
   find -type f | xargs touch --date="$REFERENCE_DATETIME"
   #
