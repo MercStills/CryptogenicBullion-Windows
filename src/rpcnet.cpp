@@ -6,7 +6,7 @@
 #include "bitcoinrpc.h"
 #include "alert.h"
 #include "wallet.h"
-#include "db.h"
+#include "dbx.h"
 #include "walletdb.h"
 
 using namespace json_spirit;

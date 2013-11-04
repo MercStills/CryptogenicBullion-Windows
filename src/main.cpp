@@ -5,7 +5,7 @@
 
 #include "alert.h"
 #include "checkpoints.h"
-#include "db.h"
+#include "dbx.h"
 #include "net.h"
 #include "init.h"
 #include "ui_interface.h"

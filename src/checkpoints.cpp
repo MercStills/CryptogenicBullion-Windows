@@ -7,7 +7,7 @@
 
 #include "checkpoints.h"
 
-#include "db.h"
+#include "dbx.h"
 #include "main.h"
 #include "uint256.h"
 
