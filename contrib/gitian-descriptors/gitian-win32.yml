@@ -34,20 +34,36 @@ script: |
   export PATH=$PATH:$HOME/qt/bin/
   #
   mkdir boost_1_50_0
+  mkdir boost_1_47_0
   cd boost_1_50_0
   mkdir -p stage/lib
+  cd ../boost_1_47_0
+  mkdir -p stage/lib
+  
   unzip ../boost-win32-1.50.0-gitian.zip
   cd bin/$GBUILD_BITS
   #
-  echo BEFORE DONE
+  echo BEFORE DO
   for lib in *; do
     i586-mingw32msvc-ar rc ../../stage/lib/libboost_${lib}-mt-s.a $lib/*.o
     i586-mingw32msvc-ranlib ../../stage/lib/libboost_${lib}-mt-s.a
   done
+  
+  cd ../../../boost_1_50_0
+  unzip ../boost-win32-1.50.0-gitian.zip 
+  cd bin/$GBUILD_BITS
+  #
+  echo BEFORE SECOND DO
+  for lib in *; do
+    i586-mingw32msvc-ar rc ../../stage/lib/libboost_${lib}-mt-s.a $lib/*.o
+    i586-mingw32msvc-ranlib ../../stage/lib/libboost_${lib}-mt-s.a
+  done
+
+ 
   echo AFTER DONE
-  mkdir ../../../lib-hold
-  touch TEST_DIR.txt
-  cp -r * ../../../lib-hold
+  #mkdir ../../../lib-hold
+  #touch TEST_DIR.txt
+  #cp -r * ../../../lib-hold
   
   cd ../..
   cp -r include/boost ../CGB-Win/src
