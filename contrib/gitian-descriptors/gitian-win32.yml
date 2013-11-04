@@ -20,7 +20,9 @@ files:
 - "cryptogenicbullion-deps-0.0.1.zip"
 script: |
   #
+  touch START_DIR.TXT
   mkdir $HOME/qt
+  touch $HOME/HOME_DIR.txt
   cd $HOME/qt
   unzip ../build/qt-win32-4.7.4-gitian.zip
   cd $HOME/build/
