@@ -52,7 +52,7 @@ script: |
   cp -r miniupnpc CGB-Win/src
   cp miniupnpc/* CGB-Win/src
   cp -r db-4.8.30.NC/build_unix/* CGB-Win/src
-  
+  cp -r db-4.8.30.NC/*  
   #
   find -type f | xargs touch --date="$REFERENCE_DATETIME"
   #
