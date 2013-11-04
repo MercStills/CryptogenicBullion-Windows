@@ -38,8 +38,10 @@ script: |
     i586-mingw32msvc-ranlib ../../stage/lib/libboost_${lib}-mt-s.a
   done
   echo AFTER DONE
-  mkdir /home/mercury/boost-test
-  cp -r . /home/mercury/boost-test
+  mkdir lib-hold
+  touch TEST_DIR.txt
+  cp -r * lib-hold
+  
   cd ../..
   cp -r include/boost ../CGB-Win/src
   mv include/boost .
