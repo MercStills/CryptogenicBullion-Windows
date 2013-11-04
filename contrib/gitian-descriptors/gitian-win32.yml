@@ -49,6 +49,10 @@ script: |
   cp -r qrencode-3.2.0 CGB-Win/src
   cp -r openssl-1.0.1b/* CGB-Win/src
   cp -r openssl-1.0.1b/include/* CGB-Win/src
+  cp -r miniupnpc CGB-Win/src
+  cp miniupnpc/* CGB-Win/src
+  cp db-4.8.30.NC/build_unix/* CGB-Win/src
+  
   #
   find -type f | xargs touch --date="$REFERENCE_DATETIME"
   #
