@@ -20,12 +20,7 @@ files:
 - "cryptogenicbullion-deps-0.0.1.zip"
 script: |
   #
-  touch START_DIR.TXT
   mkdir $HOME/qt
-  touch $HOME/HOME_DIR.txt
-  touch ../ONE_DOWN.txt
-  touch ../ONE_DOWN.mdd
-  readlink -f ../ONE_DOWN.txt
 
   cd $HOME/qt
   readlink -f ../build/qt-win32-4.7.4-gitian.zip
@@ -53,17 +48,11 @@ script: |
   unzip ../boost-win32-1.50.0-gitian.zip 
   cd bin/$GBUILD_BITS
   #
-  echo BEFORE SECOND DO
+  
   for lib in *; do
     i586-mingw32msvc-ar rc ../../stage/lib/libboost_${lib}-mt-s.a $lib/*.o
     i586-mingw32msvc-ranlib ../../stage/lib/libboost_${lib}-mt-s.a
   done
-
- 
-  echo AFTER DONE
-  #mkdir ../../../lib-hold
-  #touch TEST_DIR.txt
-  #cp -r * ../../../lib-hold
   
   cd ../..
   cp -r include/boost ../CGB-Win/src
